@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Install the per-user Sunday launchd schedule for this checkout."""
+"""Install the per-user Friday launchd schedule for this checkout."""
 
 import os
 import pathlib
@@ -21,7 +21,7 @@ def main():
     job = {
         "Label": LABEL,
         "ProgramArguments": ["/bin/sh", str(ROOT / "scripts/run-weekly.sh")],
-        "StartCalendarInterval": {"Weekday": 0, "Hour": 21, "Minute": 0},
+        "StartCalendarInterval": {"Weekday": 5, "Hour": 11, "Minute": 0},
         "StandardOutPath": str(LOG),
         "StandardErrorPath": str(LOG),
     }
